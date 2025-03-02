@@ -22,7 +22,7 @@ const subscriptionSchema = new mongoose.Schema({
         type: String,
         enum: ["daily", "weekly", "monthly", "yearly"],
     },
-    categoty: {
+    category: {
         type: String,
         enum: ["sports", "entertainment", "health", "technology", "news", "lifestyle", "other"],
         required: [true, "Subscription category is required"],
