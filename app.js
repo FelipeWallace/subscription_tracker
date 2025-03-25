@@ -28,6 +28,7 @@ app.get("/", (req, res) => {
     res.send("Hello World!");
 });
 
+// Para rodar local
 // app.listen(PORT, async () => {
 //     console.log(`Server running on http://localhost:${PORT}`);
 
@@ -35,6 +36,7 @@ app.get("/", (req, res) => {
 // })
 
 // Conectar ao banco de dados antes de exportar a aplicação
+// Configuração para Vercel
 connectToDataBase().then(() => {
     console.log("Database connected successfully");
 }).catch(err => {
