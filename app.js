@@ -28,10 +28,17 @@ app.get("/", (req, res) => {
     res.send("Hello World!");
 });
 
-app.listen(PORT, async () => {
-    console.log(`Server running on http://localhost:${PORT}`);
+// app.listen(PORT, async () => {
+//     console.log(`Server running on http://localhost:${PORT}`);
 
-    await connectToDataBase();
-})
+//     await connectToDataBase();
+// })
+
+// Conectar ao banco de dados antes de exportar a aplicação
+connectToDataBase().then(() => {
+    console.log("Database connected successfully");
+}).catch(err => {
+    console.error("Database connection error:", err);
+});
 
 export default app;
